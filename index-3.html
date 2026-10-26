@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101820">
+    <meta name="description" content="VkDigital creates clean, useful websites and simple logo designs for growing businesses.">
+    <title>VkDigital | Websites & Logo Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+:root {
+        --ink: #101820;
+        --ink-soft: #24313c;
+        --paper: #f7f8f5;
+        --white: #fff;
+        --muted: #68747d;
+        --accent: #b9f36a;
+        --line: #e3e8e2;
+        --radius: 22px;
+        --shadow: 0 18px 55px rgba(16,24,32,.09)
+    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px
+        }
+        body {
+            font-family: 'DM Sans',sans-serif;
+            color: var(--ink);
+            background: var(--paper);
+            line-height: 1.65
+        }
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+        button,a {
+            -webkit-tap-highlight-color: transparent
+        }
+        .wrap {
+            width: min(1120px,calc(100% - 40px));
+            margin-inline: auto
+        }
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(247,248,245,.9);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(227,232,226,.8)
+        }
+        nav {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            font: 800 1.18rem 'Manrope',sans-serif;
+            letter-spacing: -.04em
+        }
+        .brand-mark {
+            width: 39px;
+            height: 39px;
+            display: grid;
+            place-items: center;
+            background: var(--ink);
+            color: var(--accent);
+            border-radius: 13px;
+            font-weight: 800;
+            letter-spacing: -.08em
+        }
+        .brand span:last-child {
+            color: #5b6872
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            color: #4e5b64;
+            font-size: .94rem;
+            font-weight: 600
+        }
+        .nav-links a:hover {
+            color: #111
+        }
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 13px 19px;
+            border-radius: 999px;
+            font-weight: 700;
+            border: 1px solid transparent;
+            transition: transform .2s,background .2s;
+            cursor: pointer
+        }
+        .button:hover {
+            transform: translateY(-2px)
+        }
+        .button-dark {
+            background: var(--ink);
+            color: white
+        }
+
+        .button-dark:hover {
+            background: #273641
+        }
+        .button-lime {
+            background: var(--accent);
+            color: var(--ink)
+        }
+        .button-outline {
+            border-color: #cfd7cf;
+            background: transparent
+        }
+        .hero {
+            padding: 88px 0 84px;
+            overflow: hidden
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.08fr .92fr;
+            align-items: center;
+            gap: 54px
+        }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: #52616a;
+            font-weight: 700;
+            font-size: .78rem;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+            margin-bottom: 22px
+        }
+        .eyebrow:before {
+            content: '';
+            width: 26px;
+            height: 2px;
+            background: #78ad3a
+        }
+        h1,h2,h3 {
+            font-family: 'Manrope',sans-serif;
+            letter-spacing: -.045em;
+            line-height: 1.12
+        }
+        h1 {
+            font-size: clamp(2.8rem,6vw,5.2rem);
+            max-width: 690px;
+            font-weight: 800
+        }
+        h1 em {
+            font-style: normal;
+            color: #6a9e32
+        }
+        .hero-copy {
+            max-width: 555px;
+            margin: 24px 0 30px;
+            color: #5c6870;
+            font-size: 1.08rem
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px
+        }
+        .trust-line {
+            margin-top: 25px;
+            color: #7b858a;
+            font-size: .88rem
+        }
+        .visual {
+            min-height: 420px;
+            position: relative;
+            display: grid;
+            place-items: center
+        }
+        .visual-glow {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: #e4f5cf;
+            filter: blur(2px)
+        }
+        .mock-window {
+            position: relative;
+            width: min(100%,420px);
+            background: #fff;
+            border: 1px solid #e1e7de;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transform: rotate(2deg)
+        }
+        .window-top {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 14px 17px;
+            border-bottom: 1px solid #edf0eb
+        }
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #d6ddd4
+        }
+
+        .window-label {
+            margin-left: auto;
+            font-size: .68rem;
+            color: #9aa39b;
+            letter-spacing: .08em
+        }
+        .mock-content {
+            padding: 25px
+        }
+        .mock-tag {
+            display: inline-block;
+            font-size: .65rem;
+            font-weight: 800;
+            letter-spacing: .13em;
+            color: #5d862e;
+            background: #eff8e5;
+            padding: 6px 9px;
+            border-radius: 6px
+        }
+        .mock-title {
+            font: 800 2.15rem/1.06 'Manrope',sans-serif;
+            letter-spacing: -.06em;
+            margin: 16px 0 11px
+        }
+        .mock-title span {
+            color: #78a83f
+        }
+        .mock-line {
+            height: 7px;
+            background: #edf0eb;
+            border-radius: 10px;
+            margin: 7px 0;
+            width: 80%
+        }
+
+        .mock-line.short {
+            width: 55%
+        }
+        .mock-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 25px
+        }
+        .mock-card {
+            padding: 14px;
+            border-radius: 12px;
+            background: #f4f6f1;
+            min-height: 90px
+        }
+
+        .mock-card b {
+            display: block;
+            font-size: .77rem;
+            margin: 12px 0 3px
+        }
+
+        .mock-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 9px;
+            background: var(--accent);
+            display: grid;
+            place-items: center;
+            font-size: 1rem
+        }
+        .floating-note {
+            position: absolute;
+            right: -3px;
+            bottom: 31px;
+            padding: 15px 18px;
+            background: var(--ink);
+            color: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            font-size: .82rem;
+            transform: rotate(-3deg)
+        }
+
+        .floating-note strong {
+            display: block;
+            color: var(--accent);
+            font: 800 1.05rem 'Manrope',sans-serif
+        }
+        .section {
+            padding: 86px 0
+        }
+
+        .section-white {
+            background: #fff
+        }
+
+        .section-dark {
+            background: var(--ink);
+            color: #fff
+        }
+        .section-head {
+            max-width: 650px;
+            margin: 0 auto 42px;
+            text-align: center
+        }
+
+        .section-head .eyebrow {
+            justify-content: center
+        }
+
+        .section-head h2 {
+            font-size: clamp(2rem,4vw,3.2rem);
+            margin-bottom: 15px
+        }
+
+        .section-head p {
+            color: var(--muted)
+        }
+
+        .section-dark .section-head p {
+            color: #aeb9bd
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 18px
+        }
+        .service-card {
+            position: relative;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 29px;
+            display: flex;
+            flex-direction: column;
+            min-height: 320px;
+            transition: transform .2s,box-shadow .2s,border-color .2s
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: #c8d7bd
+        }
+        .service-icon {
+            width: 51px;
+            height: 51px;
+            border-radius: 16px;
+            display: grid;
+            place-items: center;
+            background: #eff8e5;
+            font-size: 1.45rem;
+            margin-bottom: 24px
+        }
+        .service-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 11px
+        }
+
+        .service-card p {
+            font-size: .94rem;
+            color: var(--muted);
+            margin-bottom: 17px
+        }
+        .service-card ul {
+            list-style: none;
+            display: grid;
+            gap: 8px;
+            margin-bottom: 24px;
+            color: #45515a;
+            font-size: .88rem
+        }
+
+        .service-card li:before {
+            content: '✓';
+            font-weight: 800;
+            color: #6b9e34;
+            margin-right: 9px
+        }
+        .service-link {
+            margin-top: auto;
+            font-weight: 800;
+            font-size: .9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .service-link span {
+            transition: transform .2s
+        }
+
+        .service-link:hover span {
+            transform: translateX(4px)
+        }
+        .note {
+            margin-top: 20px;
+            text-align: center;
+            color: #7a858b;
+            font-size: .86rem
+        }
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 18px
+        }
+        .work-card {
+            padding: 26px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--paper);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            min-height: 135px
+        }
+        .work-card h3 {
+            font-size: 1.18rem;
+            margin-bottom: 6px
+        }
+
+        .work-card p {
+            font-size: .9rem;
+            color: var(--muted)
+        }
+
+        .work-arrow {
+            flex-shrink: 0;
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: grid;
+            place-items: center;
+            font-size: 1.25rem
+        }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 22px;
+            counter-reset: step
+        }
+        .step {
+            padding: 25px 0;
+            border-top: 1px solid #3a454c;
+            counter-increment: step
+        }
+
+        .step:before {
+            content: '0' counter(step);
+            display: block;
+            color: var(--accent);
+            font: 800 .85rem 'Manrope',sans-serif;
+            margin-bottom: 22px
+        }
+
+        .step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px
+        }
+
+        .step p {
+            color: #aeb9bd;
+            font-size: .93rem
+        }
+        .cta {
+            padding: 64px;
+            border-radius: 28px;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px
+        }
+
+        .cta h2 {
+            font-size: clamp(2rem,4vw,3.1rem);
+            max-width: 620px
+        }
+
+        .cta p {
+            margin-top: 12px;
+            color: #46543a
+        }
+
+        .cta .button {
+            flex-shrink: 0
+        }
+        footer {
+            padding: 30px 0;
+            background: #fff;
+            border-top: 1px solid var(--line)
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 18px;
+            color: #6b777d;
+            font-size: .87rem
+        }
+
+        .footer-inner strong {
+            color: var(--ink)
+        }
+        @media(max-width:850px) {
+            .hero {
+                padding-top: 60px
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 25px
+            }
+
+            .visual {
+                min-height: 370px
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .service-card:last-child {
+                grid-column: 1/-1
+            }
+
+            .cta {
+                padding: 42px;
+                align-items: flex-start;
+                flex-direction: column
+            }}
+        @media(max-width:600px) {
+            .wrap {
+                width: min(100% - 30px,1120px)
+            }
+
+            nav {
+                min-height: 68px
+            }
+
+            .nav-links {
+                gap: 14px;
+                font-size: .83rem
+            }
+
+            .nav-links a:nth-child(2) {
+                display: none
+            }
+
+            .nav-cta {
+                padding: 10px 13px;
+                font-size: .83rem
+            }
+
+            .brand {
+                font-size: 1rem
+            }
+
+            .brand-mark {
+                width: 35px;
+                height: 35px
+            }
+
+            .hero {
+                padding: 55px 0 45px
+            }
+
+            .hero-grid {
+                gap: 15px
+            }
+
+            h1 {
+                font-size: clamp(2.65rem,13vw,4rem)
+            }
+
+            .hero-copy {
+                font-size: 1rem
+            }
+
+            .visual {
+                min-height: 330px
+            }
+
+            .visual-glow {
+                width: 270px;
+                height: 270px
+            }
+
+            .mock-content {
+                padding: 20px
+            }
+
+            .mock-title {
+                font-size: 1.8rem
+            }
+
+            .floating-note {
+                right: 0;
+                bottom: 10px
+            }
+
+            .section {
+                padding: 65px 0
+            }
+
+            .services-grid,.work-grid,.steps {
+                grid-template-columns: 1fr
+            }
+
+            .service-card,.service-card:last-child {
+                grid-column: auto;
+                min-height: unset
+            }
+
+            .service-card {
+                padding: 25px
+            }
+
+            .section-head {
+                margin-bottom: 30px
+            }
+
+            .work-card {
+                min-height: 120px
+            }
+
+            .cta {
+                padding: 30px 24px
+            }
+
+            .footer-inner {
+                align-items: flex-start;
+                flex-direction: column
+            }}
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+
+            *,*:before,*:after {
+                transition: none!important
+            }}
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrap">
+            <nav aria-label="Main navigation">
+                <a class="brand" href="#home" aria-label="VkDigital home"><span class="brand-mark">Vk</span><span>Vk<span>Digital</span></span></a>
+                <div class="nav-links">
+                    <a href="#services">Services</a><a href="#work">My work</a><a href="#process">Process</a>
+                </div>
+                <a class="button button-dark nav-cta" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="wrap hero-grid">
+                <div>
+                    <div class="eyebrow">
+                        Independent digital services
+                    </div>
+                    <h1>Good ideas deserve a <em>great online presence.</em></h1>
+                    <p class="hero-copy">
+                        I'm Vishal, the person behind VkDigital. I help individuals and small businesses get online with clean websites, online stores and simple, thoughtful logo designs.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button button-dark" href="#services">Explore services <span aria-hidden="true">↓</span></a><a class="button button-outline" href="#work">See selected work</a>
+                    </div>
+                    <p class="trust-line">
+                        Personal attention · Clear communication · Built around your needs
+                    </p>
+                </div>
+                <div class="visual" aria-label="Illustration of a modern website design">
+                    <div class="visual-glow"></div>
+                    <div class="mock-window">
+                        <div class="window-top">
+                            <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="window-label">YOUR NEXT WEBSITE</span>
+                        </div>
+                        <div class="mock-content">
+                            <span class="mock-tag">A FRESH START</span><div class="mock-title">
+                                Make your<br>business <span>stand out.</span>
+                            </div>
+                            <div class="mock-line"></div>
+                            <div class="mock-line short"></div>
+                            <div class="mock-cards">
+                                <div class="mock-card">
+                                    <span class="mock-icon">✳</span><b>Brand identity</b><div class="mock-line short"></div>
+                                </div>
+                                <div class="mock-card">
+                                    <span class="mock-icon">↗</span><b>Web experience</b><div class="mock-line short"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating-note">
+                        <strong>From idea to launch</strong>One step at a time.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-white" id="services">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="eyebrow">
+                        What I can help with
+                    </div>
+                    <h2>Simple services. Made for your next step.</h2><p>
+                        Choose the support you need, whether you're starting a brand or bringing your business online.
+                    </p>
+                </div>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">
+                            ✳
+                        </div>
+                        <h3>Basic Logo Design</h3><p>
+                            A clean, memorable starter logo designed in Canva to give your business a consistent look.
+                        </p>
+                        <ul>
+                            <li>Simple, custom layout</li><li>Colour and font selection</li><li>Digital-ready logo files</li>
+                        </ul>
+                        <a class="service-link" href="#contact" data-service="Basic Logo Design">Discuss logo design <span aria-hidden="true">→</span></a>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">
+                            ⌘
+                        </div>
+                        <h3>Standard Website</h3><p>
+                            A responsive website that introduces your business, explains what you offer and helps customers contact you.
+                        </p>
+                        <ul>
+                            <li>Home, About, Services and Contact</li><li>Mobile-friendly layout</li><li>Contact and WhatsApp links</li><li>Basic deployment support</li>
+                        </ul>
+                        <a class="service-link" href="#contact" data-service="Standard Website">Discuss a website <span aria-hidden="true">→</span></a>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">
+                            ▣
+                        </div>
+                        <h3>E-commerce Website</h3><p>
+                            A product-focused online store where customers can browse items, add them to a cart and place orders.
+                        </p>
+                        <ul>
+                            <li>Product catalogue and cart</li><li>Checkout and order flow</li><li>WhatsApp ordering or agreed payment setup</li><li>Responsive design and launch support</li>
+                        </ul>
+                        <a class="service-link" href="#contact" data-service="E-commerce Website">Discuss an online store <span aria-hidden="true">→</span></a>
+                    </article>
+                </div>
+                <p class="note">
+                    Every project is scoped individually. Domain, hosting, paid tools and extra features can be quoted separately.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="work">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="eyebrow">
+                        Selected projects
+                    </div>
+                    <h2>A few projects to explore.</h2><p>
+                        Take a look at these live examples. Project details and more work can be added here over time.
+                    </p>
+                </div>
+                <div class="work-grid">
+                    <a class="work-card" href="https://vkdigital29.github.io/Anandi-Art-Craft/" target="_blank" rel="noopener noreferrer"><div>
+                        <h3>Anandi Art & Craft</h3><p>
+                            Explore a website project by VkDigital.
+                        </p>
+                    </div>
+                        <span class="work-arrow" aria-hidden="true">↗</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-dark" id="process">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="eyebrow">
+                        How it works
+                    </div>
+                    <h2>Clear steps. No unnecessary confusion.</h2><p>
+                        You'll know what we're building, what it costs and what happens next.
+                    </p>
+                </div>
+                <div class="steps">
+                    <article class="step">
+                        <h3>Tell me your idea</h3><p>
+                            Share your business, goals, preferred style and the features you need.
+                        </p>
+                    </article>
+                    <article class="step">
+                        <h3>Agree on the scope</h3><p>
+                            We'll confirm the deliverables, timeline, price and any separate running costs before work begins.
+                        </p>
+                    </article>
+                    <article class="step">
+                        <h3>Build, review &amp; launch</h3><p>
+                            I'll create the agreed work, make the included revisions, test it and help get it online.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="wrap">
+                <div class="cta">
+                    <div>
+                        <div class="eyebrow">
+                            Have a project in mind?
+                        </div>
+                        <h2>Let's make something useful together.</h2><p>
+                            Tell me what you want to build and I'll help you figure out the next step.
+                        </p>
+                    </div>
+                    <a class="button button-dark" href="https://wa.me/918378836293?text=Hi%20VkDigital!%20I%27d%20like%20to%20discuss%20a%20project." id="contact-whatsapp" target="_blank" rel="noopener noreferrer">Start a conversation <span aria-hidden="true">↗</span></a>
+                </div>
+                <p class="note">
+                    Click the button to start a project enquiry with VkDigital on WhatsApp.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap footer-inner">
+            <a class="brand" href="#home"><span class="brand-mark">Vk</span><span>Vk<span>Digital</span></span></a><p>
+                © <span id="year"></span> VkDigital. Built with care.
+            </p>
+            <p>
+                Websites · E-commerce · Logo design
+            </p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        // When a service link is clicked, include that service in the WhatsApp enquiry.
+        const whatsappButton = document.getElementById('contact-whatsapp');
+        document.querySelectorAll('[data-service]').forEach(link => {
+            link.addEventListener('click', () => {
+                const service = link.dataset.service;
+                const message = `Hi VkDigital! I'm interested in ${service}. Could we discuss the details and pricing?`;
+                whatsappButton.href = 'https://wa.me/918378836293?text=' + encodeURIComponent(message);
+            });
+        });
+    </script>
+</body>
+</html>
